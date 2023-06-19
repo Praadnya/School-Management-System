@@ -1,0 +1,86 @@
+#All these t be run on mysql shell
+
+#Admin records(10)
+
+INSERT INTO Admin VALUES(1001,11201,"Sarah",12,"A","PCMC","Hindi");
+INSERT INTO Admin VALUES(1002,11202,"Sharma",12,"B","PCMB","Kannada");
+INSERT INTO Admin VALUES(1003,11203,"Sanya",12,"A","PCMB","Hindi");
+INSERT INTO Admin VALUES(1004,11204,"Amy",12,"A","PCMC","Kannada");
+INSERT INTO Admin VALUES(1005,11205,"Sam",12,"B","PCMC","Hindi");
+INSERT INTO Admin VALUES(1006,11206,"Bobby",12,"B","PCMB","Hindi");
+INSERT INTO Admin VALUES(1007,11207,"Dean",12,"A","PCMC","Kannada");
+INSERT INTO Admin VALUES(1008,11208,"Charlie",12,"B","PCMC","Hindi");
+INSERT INTO Admin VALUES(1009,11209,"Cass",12,"B","PCMB","Kannada");
+INSERT INTO Admin VALUES(1010,11210,"Sam",12,"A","PCMB","Hindi");
+
+#Login table records
+
+INSERT INTO Login VALUES("Praadnya","tiger","Admin");
+INSERT INTO Login VALUES("Misha","lion1","Teacher");
+
+#Teacher table creation #It won't work
+
+CREATE TABLE Teacher(RollNo INTEGER ,
+                        SubID INTEGER,
+                        Marks INTEGER,
+                        FOREIGN KEY (SubID) REFERENCES subject (SubID) ON DELETE CASCADE,
+                        FOREIGN KEY (RollNo) REFERENCES admin (RollNo) ON DELETE CASCADE);
+
+
+#Teacher table records
+
+#Physics,Chemistry,Maths,English(Copy paste same for all the 4 subjects but make sure to change subjet code for each)
+INSERT INTO teacher VALUES(1001,001,98);
+INSERT INTO teacher VALUES(1002,001,72);
+INSERT INTO teacher VALUES(1003,001,68);
+INSERT INTO teacher VALUES(1004,001,53);
+INSERT INTO teacher VALUES(1005,001,49);
+INSERT INTO teacher VALUES(1006,001,78);11:27 PM 4/27/2021
+INSERT INTO teacher VALUES(1007,001,67);
+INSERT INTO teacher VALUES(1008,001,35);
+INSERT INTO teacher VALUES(1009,001,43);
+INSERT INTO teacher VALUES(1010,001,50);
+
+#For these subjects dont change anything (Its because of that error I explained)
+
+#Comp Sc.
+INSERT INTO teacher VALUES(1001,005,98);
+INSERT INTO teacher VALUES(1004,005,98);
+INSERT INTO teacher VALUES(1005,005,98);
+INSERT INTO teacher VALUES(1007,005,98);
+INSERT INTO teacher VALUES(1008,005,98);
+
+#Biology
+INSERT INTO teacher VALUES(1002,006,98);
+INSERT INTO teacher VALUES(1003,006,98);
+INSERT INTO teacher VALUES(1006,006,98);
+INSERT INTO teacher VALUES(1009,006,98);
+INSERT INTO teacher VALUES(1010,006,98);
+
+#Kannada
+INSERT INTO teacher VALUES(1002,007,98);
+INSERT INTO teacher VALUES(1004,007,98);
+INSERT INTO teacher VALUES(1007,007,98);
+INSERT INTO teacher VALUES(1009,007,98);
+
+#Hindi
+INSERT INTO teacher VALUES(1001,008,98);
+INSERT INTO teacher VALUES(1003,008,98);
+INSERT INTO teacher VALUES(1005,008,98);
+INSERT INTO teacher VALUES(1006,008,98);
+INSERT INTO teacher VALUES(1008,008,98);
+INSERT INTO teacher VALUES(1010,008,98);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
